@@ -1,0 +1,78 @@
+{
+	"name": "pdfpreview",
+	"displayName": "PDF Preview",
+	"description": "Open PDF in Preview",
+	"version": "1.0.0",
+	"publisher": "corentinartaud",
+	"engines": {
+		"vscode": "^1.48.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"pdf",
+		"pdf preview"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/corentinartaud/vscode-pdfpreview.git"
+	},
+	"bugs": {
+		"url": "https://github.com/corentinartaud/vscode-pdfpreview/issues"
+	},
+	"icon": "vscode-pdfpreview.png",
+	"activationEvents": [
+		"onCustomEditor:pdf.preview"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "pdf.preview",
+				"displayName": "PDF Preview",
+				"selector": [
+					{
+						"filenamePattern": "*.pdf"
+					}
+				]
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"package": "npx vsce package",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.48.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^14.0.27",
+		"eslint": "^7.6.0",
+		"@typescript-eslint/eslint-plugin": "^3.8.0",
+		"@typescript-eslint/parser": "^3.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.0.2",
+		"vscode-test": "^1.4.0"
+	},
+	"dependencies": {
+		"open": "^7.2.1"
+	},
+	"__metadata": {
+		"id": "b3c3486b-8315-4c93-9e6d-cf3f77240ae6",
+		"publisherId": "38b5f8a1-3a59-4b0a-8180-46c307a914b9",
+		"publisherDisplayName": "corentinartaud",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1666280838962,
+		"preRelease": false
+	}
+}
